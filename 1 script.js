@@ -3,7 +3,6 @@ let u = prompt("ENTER PLAYER NAME");
 let inputDir = { x: 0, y: 0 };
 const foodSound = new Audio("food.mp3");
 const gameOverSound = new Audio("game over.mp3");
-
 let speed = 3;
 let score = 0;
 let lastPaintTime = 0;
@@ -31,7 +30,7 @@ function isCollide(snake) {
   if (
     snake[0].x >= 20 ||
     snake[0].x <= 0 ||
-    snake[0].y >= 20||
+    snake[0].y >= 20 ||
     snake[0].y <= 0
   ) {
     return true;
@@ -44,15 +43,17 @@ function gameEngine() {
     gameOverSound.play();
     inputDir = { x: 0, y: 0 };
     alert(`YOUR GAME OVER  ${u}  PRESS ANY KEY TO PLAY AGAIN`);
-    snakeArr = [{ x: 13, y: 15 }];
+        snakeArr = [{ x: 13, y: 15 }];
     score = 0;
+    
   }
+  
 
   //If you eaten the food ,increment the score and regenerate the food.
   if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
     foodSound.play();
     score += 1;
-    scoreBox.innerHTML ="Player:"+ u + ": Score :" + score;
+    scoreBox.innerHTML = "Player:" + u + ": Score :" + score;
     snakeArr.unshift({
       x: snakeArr[0].x + inputDir.x,
       y: snakeArr[0].y + inputDir.y,
