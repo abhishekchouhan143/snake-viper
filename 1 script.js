@@ -3,7 +3,14 @@ let u = prompt("ENTER PLAYER NAME");
 let inputDir = { x: 0, y: 0 };
 const foodSound = new Audio("food.mp3");
 const gameOverSound = new Audio("game over.mp3");
-let speed = 3;
+
+// user input for speed of the snake
+
+let user = prompt(
+  "select the speed in snake moving 1 to 4 is easy , 5 to 9 is hard and 10 to 15 is very-hard"
+);
+
+let speed = user;
 let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
