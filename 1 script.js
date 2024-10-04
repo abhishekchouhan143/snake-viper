@@ -3,6 +3,7 @@ let u = prompt("ENTER PLAYER NAME");
 let inputDir = { x: 0, y: 0 };
 const foodSound = new Audio("food.mp3");
 const gameOverSound = new Audio("game over.mp3");
+
 let speed = 3;
 let score = 0;
 let lastPaintTime = 0;
